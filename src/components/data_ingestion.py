@@ -10,8 +10,8 @@ from dataclasses import dataclass  # Import dataclass decorator to easily create
 from src.components.data_transformation import DataTransformation  # Import the DataTransformation class for transforming data
 from src.components.data_transformation import DataTransformationConfig  # Import configuration for data transformation
 
-# from src.components.model_trainer import ModelTrainerConfig  # Import configuration for model training
-# from src.components.model_trainer import ModelTrainer  # Import the ModelTrainer class for training our machine learning model
+from src.components.model_trainer import ModelTrainerConfig  # Import configuration for model training
+from src.components.model_trainer import ModelTrainer  # Import the ModelTrainer class for training our machine learning model
 
 @dataclass  # Use dataclass decorator to automatically generate init, repr, etc.
 class DataIngestionConfig:
@@ -63,5 +63,5 @@ if __name__ == "__main__":  # If this script is run directly (not imported as a 
     data_transformation = DataTransformation()  # Create an instance of DataTransformation to process the data further
     train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)  # Transform the data into arrays
 
-    # modeltrainer = ModelTrainer()  # Create an instance of ModelTrainer to train the machine learning model
-    # print(modeltrainer.initiate_model_trainer(train_arr, test_arr))  # Train the model and print the output/result
+    modeltrainer = ModelTrainer()  # Create an instance of ModelTrainer to train the machine learning model
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))  # Train the model and print the output/result
